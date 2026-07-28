@@ -1,151 +1,126 @@
-# RTOS Task Scheduler
+# RTOS Priority Round Robin Task Scheduler
 
 ## Team Information
 
-**Group:** 05
+**Project Title:** RTOS Priority Round Robin Task Scheduler
 
 **Team Name:** Triple Spark
+
+**Group:** 05
 
 ---
 
 ## Project Description
 
-This project implements a simple RTOS (Real-Time Operating System) Task Scheduler using C.
+This project is a simulation of an RTOS (Real-Time Operating System) Task Scheduler developed using the C programming language.
 
-The scheduler combines:
+The scheduler combines **Priority Scheduling** with the **Round Robin Scheduling Algorithm**. It also implements **Priority Aging** to prevent starvation and improve fairness among tasks.
 
-- Priority Scheduling
-- Round Robin Scheduling
-- Ready Queue Management
-
-Tasks are executed based on their priority, and tasks with equal priority are scheduled using Round Robin.
+The program reads task information from a text file (`tasks.txt`) and schedules the tasks based on their priorities and time quantum.
 
 ---
 
 ## Features
 
-✔ Priority Based Scheduling
+- Priority Queue Implementation
+- Round Robin Scheduling
+- Priority Aging
+- Task Execution Simulation
+- Waiting Time Calculation
+- Turnaround Time Calculation
+- Context Switch Counting
+- Gantt Chart Generation
+- Final Performance Statistics
+- Task Loading from `tasks.txt`
 
-✔ Round Robin Scheduling
+---
 
-✔ Ready Queue Implementation
+## Technologies Used
 
-✔ Task Completion Detection
-
-✔ Waiting Time Calculation
-
-✔ Turnaround Time Calculation
-
-✔ Average Waiting Time
-
-✔ Average Turnaround Time
-
-✔ Context Switch Counter
-
-✔ Gantt Chart with Time Scale
+- C Programming Language
+- GCC Compiler
+- Visual Studio Code
+- GitHub
 
 ---
 
 ## Project Structure
 
 ```
-RTOS-Task-Scheduler/
-
+RTOS-Task-Scheduler
 │── main.c
-
-│── scheduler.c
-
-│── scheduler.h
-
 │── queue.c
-
 │── queue.h
-
+│── scheduler.c
+│── scheduler.h
 │── task.c
-
 │── task.h
-
+│── tasks.txt
 │── README.md
 ```
 
 ---
 
+## Input Format
+
+Example (`tasks.txt`)
+
+```
+1 3 5
+2 1 4
+3 2 6
+4 4 3
+5 2 8
+```
+
+Format:
+
+```
+TaskID Priority BurstTime
+```
+
+---
+
+## Output
+
+The scheduler displays
+
+- Ready Queue
+- CPU Execution
+- Waiting Time
+- Turnaround Time
+- Context Switches
+- Gantt Chart
+- Final Statistics
+
+---
+
 ## Scheduling Algorithm
 
-1. Insert Tasks into Priority Queue
-
-2. Select Highest Priority Task
-
-3. Execute for Time Quantum
-
-4. If Remaining Time > 0
-
-- Insert Again
-
-5. Otherwise
-
-- Complete Task
-
-6. Repeat until Queue becomes Empty
-
----
-
-## Sample Output
-
-```
-Priority Queue
-
-Task 1
-Task 3
-Task 2
-
-Running...
-
-Average Waiting Time = 5.33
-
-Average Turnaround Time = 10.33
-
-Total Context Switches = 8
-```
-
----
-
-## Technologies Used
-
-- C Programming
-
-- Data Structures
-
-- Queue
-
-- Priority Queue
-
-- Round Robin Algorithm
-
-- VS Code
-
-- GitHub
+1. Load tasks from file.
+2. Insert tasks into Priority Queue.
+3. Select highest priority task.
+4. Execute using Round Robin.
+5. Apply Aging.
+6. Repeat until all tasks finish.
+7. Display statistics.
 
 ---
 
 ## Future Improvements
 
-- Multilevel Queue Scheduler
-
-- Priority Aging
-
 - Dynamic Task Creation
-
-- CPU Utilization
-
-- Response Time Calculation
-
-- Graphical Gantt Chart
+- Menu Driven Interface
+- CPU Utilization Graph
+- Multi-Level Feedback Queue
+- GUI Version
 
 ---
 
 ## Developed By
 
-Triple Spark
+**Triple Spark**
 
-Group 05
+Group-05
+
+Department of Computer Science and Engineering
