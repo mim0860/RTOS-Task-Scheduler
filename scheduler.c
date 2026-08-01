@@ -225,3 +225,17 @@ printf(RESET);
 
 printf("\n");
 }   // <-- runScheduler() ends here
+
+
+scheduler.h
+
+#ifndef SCHEDULER_H
+#define SCHEDULER_H
+
+#include "queue.h"
+
+void runScheduler(PriorityQueue *q, int timeQuantum);
+
+#endif
+
+
